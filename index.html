@@ -549,33 +549,26 @@ function renderVideos(items){
 }
 
 async function loadVideos(){
-  const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
   try{
-    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=50`);
+    const rss = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`);
     const data = await res.json();
-    if(data.status==='ok'&&data.items&&data.items.length){
-      const items = data.items.map(v=>({
-        id: (v.link||'').split('v=')[1]||(v.guid||'').split('v=')[1]||'',
-        title: v.title, thumb: v.thumbnail||`https://i.ytimg.com/vi/${(v.link||'').split('v=')[1]}/mqdefault.jpg`,
-        date: v.pubDate?v.pubDate.slice(0,10):''
-      }));
-      renderVideos(items); return;
-    }
-  }catch(e){}
-  try{
-    const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(rssUrl)}`);
-    const text = await res.text();
-    const xml = new DOMParser().parseFromString(text,'text/xml');
-    const entries = Array.from(xml.querySelectorAll('entry'));
-    if(entries.length){
-      const items = entries.map(e=>{
-        const id = e.querySelector('videoId')?.textContent||e.querySelector('id')?.textContent?.split(':').pop()||'';
-        return {id, title:e.querySelector('title')?.textContent||'', thumb:`https://i.ytimg.com/vi/${id}/mqdefault.jpg`, date:e.querySelector('published')?.textContent?.slice(0,10)||''};
-      });
-      renderVideos(items); return;
-    }
-  }catch(e){}
-  fallback();
+    if(data.items && data.items.length){
+      document.getElementById('stat-videos').textContent = data.items.length+'+';
+      const mk = v => `
+        <a class="video-card" href="${v.link}" target="_blank">
+          <div class="video-thumb">
+            <img src="${v.thumbnail}" alt="${v.title}" onerror="this.src='https://i.ytimg.com/vi/${v.link.split('v=')[1]}/hqdefault.jpg'">
+          </div>
+          <div class="video-info">
+            <div class="video-title">${v.title}</div>
+            <div class="video-date">${v.pubDate ? v.pubDate.slice(0,10) : ''}</div>
+          </div>
+        </a>`;
+      document.getElementById('home-videos').innerHTML = data.items.slice(0,3).map(mk).join('');
+      document.getElementById('all-videos').innerHTML = data.items.map(mk).join('');
+    } else { fallback(); }
+  } catch(e){ fallback(); }
 }
 
 function fallback(){
