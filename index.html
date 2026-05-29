@@ -18,36 +18,29 @@
   --font-mono:'Space Mono',monospace;
 }
 body{background:var(--bg);color:var(--text);font-family:var(--font-jp);min-height:100vh;overflow-x:hidden}
-
-/* mesh background */
 .mesh{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .mesh-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.13}
 .b1{width:500px;height:500px;background:var(--v1);top:-100px;left:-100px}
 .b2{width:400px;height:400px;background:var(--v2);top:20%;right:-80px}
 .b3{width:350px;height:350px;background:var(--v3);bottom:10%;left:20%}
 .b4{width:300px;height:300px;background:var(--v4);bottom:-50px;right:30%}
-
-/* NAV */
 nav{position:sticky;top:0;z-index:100;background:rgba(7,8,15,0.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:58px}
 .logo-wrap{display:flex;flex-direction:column;line-height:1}
 .logo-main{font-family:var(--font-serif);font-size:15px;font-weight:700;background:linear-gradient(90deg,var(--v1),var(--v2),var(--v3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:2px}
 .logo-sub{font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:3px;margin-top:1px}
-.nav-links{display:flex;gap:1.8rem}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
 .nav-links a{font-size:12px;color:var(--muted);text-decoration:none;cursor:pointer;transition:color 0.2s;letter-spacing:1px;font-family:var(--font-mono)}
 .nav-links a:hover,.nav-links a.active{color:var(--text)}
 .nav-links a.active{border-bottom:1px solid var(--v1);padding-bottom:2px}
-
-/* COLOR STRIPE */
+.admin-btn{font-size:11px;color:var(--muted);background:none;border:1px solid var(--border);border-radius:4px;padding:3px 8px;cursor:pointer;font-family:var(--font-mono);transition:all 0.2s}
+.admin-btn:hover{border-color:var(--v1);color:var(--v1)}
+.admin-btn.on{border-color:var(--v2);color:var(--v2)}
 .stripe{display:flex;height:3px}
 .stripe div{flex:1}
 .s-a{background:var(--v1)}.s-b{background:var(--v2)}.s-c{background:var(--v3)}.s-d{background:var(--v4)}.s-e{background:var(--v5)}
-
-/* PAGE TRANSITIONS */
 .page{display:none;animation:fadeIn 0.35s ease;position:relative;z-index:1}
 .page.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-
-/* HERO */
 .hero{padding:5rem 2.5rem 3.5rem;max-width:920px;margin:0 auto}
 .hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem}
 .hero-eyebrow span{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;color:var(--muted)}
@@ -65,8 +58,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,8,15,0.85);backdrop-filt
 .stat-num{font-family:var(--font-mono);font-size:1.7rem;font-weight:700;line-height:1}
 .stat-label{font-size:10px;color:var(--muted);margin-top:5px;letter-spacing:1px}
 .s1{color:var(--v1)}.s2{color:var(--v2)}.s3{color:var(--v3)}
-
-/* ABOUT */
 .about-grid{max-width:920px;margin:0 auto;padding:3rem 2.5rem;display:grid;grid-template-columns:180px 1fr;gap:3rem;align-items:start}
 .avatar-col{display:flex;flex-direction:column;align-items:center;gap:1rem}
 .avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--v1),var(--v2),var(--v3));display:flex;align-items:center;justify-content:center;border:2px solid rgba(124,111,255,0.3)}
@@ -82,8 +73,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,8,15,0.85);backdrop-filt
 .t2{background:rgba(255,110,180,0.1);border:1px solid rgba(255,110,180,0.3);color:var(--v2)}
 .t3{background:rgba(67,232,200,0.1);border:1px solid rgba(67,232,200,0.3);color:var(--v3)}
 .t4{background:rgba(255,209,102,0.1);border:1px solid rgba(255,209,102,0.3);color:var(--v4)}
-
-/* TIMELINE */
 .timeline{max-width:920px;margin:0 auto;padding:0 2.5rem 3rem}
 .tl-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:2px;margin-bottom:0.8rem}
 .tl-bar{display:flex;gap:3px}
@@ -91,29 +80,21 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,8,15,0.85);backdrop-filt
 .tl-yr.now{background:linear-gradient(135deg,rgba(124,111,255,0.25),rgba(255,110,180,0.15));border-color:var(--v1);color:var(--text)}
 .tl-yr .yr{display:block;font-weight:700}
 .tl-yr .lbl{display:block;font-size:9px;opacity:0.6;margin-top:2px}
-
-/* SECTIONS */
 .section{max-width:920px;margin:0 auto;padding:2.5rem 2.5rem}
 .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
 .section-title{font-family:var(--font-serif);font-size:1.3rem;display:flex;align-items:center;gap:10px}
 .title-dot{width:8px;height:8px;border-radius:50%}
 .section-link{font-size:11px;color:var(--v1);text-decoration:none;cursor:pointer;font-family:var(--font-mono)}
-
-/* VIDEO GRID */
 .video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .video-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:all 0.2s;text-decoration:none;color:var(--text);display:block}
 .video-card:hover{border-color:var(--v1);transform:translateY(-3px);box-shadow:0 8px 30px rgba(124,111,255,0.12)}
 .video-thumb{width:100%;aspect-ratio:16/9;background:var(--surface2);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .video-thumb img{width:100%;height:100%;object-fit:cover}
-.play-btn{width:38px;height:38px;background:rgba(255,0,0,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.play-btn svg{width:14px;height:14px;fill:#fff;margin-left:3px}
 .video-info{padding:10px 12px}
 .video-title{font-size:12.5px;font-weight:500;line-height:1.5;margin-bottom:4px;color:var(--text)}
 .video-date{font-size:10px;color:var(--muted);font-family:var(--font-mono)}
-
-/* PAPERS */
 .papers-list{display:flex;flex-direction:column;gap:10px}
-.paper-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.4rem;display:flex;gap:1.2rem;align-items:flex-start;cursor:pointer;transition:border-color 0.2s}
+.paper-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.4rem;display:flex;gap:1.2rem;align-items:flex-start;transition:border-color 0.2s}
 .paper-card:hover{border-color:var(--v2)}
 .paper-num{font-family:var(--font-mono);font-size:1.8rem;font-weight:700;color:var(--border);line-height:1;min-width:44px}
 .paper-body{flex:1}
@@ -122,42 +103,43 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,8,15,0.85);backdrop-filt
 .paper-meta{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;align-items:center}
 .pm-tag{border-radius:4px;padding:2px 8px;font-size:10px;font-family:var(--font-mono)}
 .pm-date{font-size:10px;color:var(--muted);font-family:var(--font-mono);margin-left:auto}
-
-/* BLOG POSTS */
 .posts-list{display:flex;flex-direction:column;gap:10px}
-.post-card{background:var(--surface);border-left:3px solid var(--v3);border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);border-radius:0 10px 10px 0;padding:1.1rem 1.4rem;cursor:pointer;transition:all 0.2s}
-.post-card:hover{border-left-color:var(--v2);transform:translateX(3px)}
+.post-card{background:var(--surface);border-left:3px solid var(--v3);border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);border-radius:0 10px 10px 0;padding:1.1rem 1.4rem;transition:all 0.2s}
+.post-card:hover{border-left-color:var(--v2)}
 .post-date{font-family:var(--font-mono);font-size:10px;color:var(--v3);letter-spacing:2px;margin-bottom:6px}
 .post-title{font-family:var(--font-serif);font-size:.95rem;font-weight:600;margin-bottom:5px}
 .post-preview{font-size:12px;color:var(--muted);line-height:1.7}
 .post-tags{display:flex;gap:6px;margin-top:8px}
-
-/* ADD BUTTON */
-.add-btn{display:flex;align-items:center;gap:8px;background:transparent;border:1px dashed rgba(124,111,255,0.3);border-radius:10px;padding:.9rem 1.4rem;color:var(--muted);font-size:12px;cursor:pointer;transition:all 0.2s;font-family:var(--font-jp);width:100%;justify-content:center}
+/* 管理按鈕 */
+.item-actions{display:none;gap:6px;margin-top:10px}
+.admin-mode .item-actions{display:flex}
+.act-btn{font-size:11px;border-radius:4px;padding:3px 10px;cursor:pointer;font-family:var(--font-mono);border:none}
+.act-edit{background:rgba(124,111,255,0.2);color:var(--v1)}
+.act-del{background:rgba(255,110,180,0.2);color:var(--v2)}
+.add-btn{display:none;align-items:center;gap:8px;background:transparent;border:1px dashed rgba(124,111,255,0.3);border-radius:10px;padding:.9rem 1.4rem;color:var(--muted);font-size:12px;cursor:pointer;transition:all 0.2s;font-family:var(--font-jp);width:100%;justify-content:center;margin-top:10px}
+.admin-mode .add-btn{display:flex}
 .add-btn:hover{border-color:var(--v1);color:var(--v1)}
-
 .divider{height:1px;background:var(--border);margin:0 2.5rem}
 .empty-state{text-align:center;padding:3rem;color:var(--muted);font-size:12px}
-
 /* MODAL */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;padding:1rem}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:200;align-items:center;justify-content:center;padding:1rem}
 .modal-bg.open{display:flex}
-.modal{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;width:100%;max-width:560px;position:relative}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;width:100%;max-width:560px;position:relative;max-height:90vh;overflow-y:auto}
 .modal h3{font-family:var(--font-serif);font-size:1.2rem;margin-bottom:1.5rem}
 .modal label{display:block;font-size:11px;color:var(--muted);font-family:var(--font-mono);letter-spacing:1px;margin-bottom:6px;margin-top:1rem}
-.modal input,.modal textarea,.modal select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-family:var(--font-jp);font-size:13px;outline:none;transition:border-color 0.2s}
+.modal input,.modal textarea{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-family:var(--font-jp);font-size:13px;outline:none;transition:border-color 0.2s}
 .modal input:focus,.modal textarea:focus{border-color:var(--v1)}
 .modal textarea{min-height:100px;resize:vertical}
 .modal-btns{display:flex;gap:8px;margin-top:1.5rem;justify-content:flex-end}
 .btn-cancel{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:8px 18px;font-size:12px;cursor:pointer;font-family:var(--font-jp)}
 .btn-submit{background:var(--v1);border:none;color:#fff;border-radius:8px;padding:8px 18px;font-size:12px;cursor:pointer;font-family:var(--font-jp);font-weight:700}
 .close-modal{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer}
-
+/* 後台登入 */
+.admin-bar{display:none;background:rgba(255,110,180,0.08);border-bottom:1px solid rgba(255,110,180,0.2);padding:6px 2rem;font-size:11px;color:var(--v2);font-family:var(--font-mono);position:sticky;top:58px;z-index:99;align-items:center;gap:1rem}
+.admin-bar.show{display:flex}
 footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:11px;color:var(--muted);font-family:var(--font-mono);margin-top:2rem;letter-spacing:1px;position:relative;z-index:1}
-
 @media(max-width:600px){
   .about-grid{grid-template-columns:1fr}
-  .avatar-col{flex-direction:row;justify-content:flex-start}
   .nav-links{gap:1rem}
   .hero{padding:3rem 1.5rem 2rem}
   .section{padding:2rem 1.5rem}
@@ -167,10 +149,8 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
 <body>
 
 <div class="mesh">
-  <div class="mesh-blob b1"></div>
-  <div class="mesh-blob b2"></div>
-  <div class="mesh-blob b3"></div>
-  <div class="mesh-blob b4"></div>
+  <div class="mesh-blob b1"></div><div class="mesh-blob b2"></div>
+  <div class="mesh-blob b3"></div><div class="mesh-blob b4"></div>
 </div>
 
 <nav>
@@ -184,13 +164,13 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
     <a onclick="show('videos')" id="nav-videos">影片</a>
     <a onclick="show('papers')" id="nav-papers">論文</a>
     <a onclick="show('blog')" id="nav-blog">心得</a>
+    <button class="admin-btn" id="admin-toggle" onclick="toggleAdmin()">登入</button>
   </div>
 </nav>
-<div class="stripe">
-  <div class="s-a"></div><div class="s-b"></div><div class="s-c"></div><div class="s-d"></div><div class="s-e"></div>
-</div>
+<div class="stripe"><div class="s-a"></div><div class="s-b"></div><div class="s-c"></div><div class="s-d"></div><div class="s-e"></div></div>
+<div class="admin-bar" id="admin-bar">⚙ 管理模式 — 可新增、編輯、刪除內容 <span style="margin-left:auto;cursor:pointer;color:var(--muted)" onclick="logoutAdmin()">登出</span></div>
 
-<!-- ===== HOME ===== -->
+<!-- HOME -->
 <div class="page active" id="page-home">
   <div class="hero">
     <div class="hero-eyebrow">
@@ -199,15 +179,12 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       <div class="color-dot" style="background:var(--v3)"></div>
       <span>子平 · 數學創作者</span>
     </div>
-    <h1 class="hero-name">
-      <span class="grad-purple">數學</span>，<br>
-      <span class="grad-teal">一起玩題目</span>
-    </h1>
+    <h1 class="hero-name"><span class="grad-purple">數學</span>，<br><span class="grad-teal">一起玩題目</span></h1>
     <p class="hero-sub">不只是解題，而是玩數學。這裡有影片、論文、心得，記錄我對數學的好奇與熱情。</p>
     <div class="hero-live"><span class="live-dot"></span>每週持續更新中</div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num s1" id="stat-videos">─</div><div class="stat-label">YouTube 影片</div></div>
-      <div class="stat"><div class="stat-num s2" id="stat-papers">1+</div><div class="stat-label">發表論文</div></div>
+      <div class="stat"><div class="stat-num s2" id="stat-papers">0</div><div class="stat-label">發表論文</div></div>
       <div class="stat"><div class="stat-num s3">∞</div><div class="stat-label">數學好奇心</div></div>
     </div>
   </div>
@@ -225,11 +202,11 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       <div class="section-title"><div class="title-dot" style="background:var(--v2)"></div>最新論文</div>
       <a class="section-link" onclick="show('papers')">全部 →</a>
     </div>
-    <div class="papers-list" id="home-papers"></div>
+    <div class="papers-list" id="home-papers"><div class="empty-state">尚無論文</div></div>
   </div>
 </div>
 
-<!-- ===== ABOUT ===== -->
+<!-- ABOUT -->
 <div class="page" id="page-about">
   <div class="about-grid">
     <div class="avatar-col">
@@ -251,11 +228,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
       <p>這個網站是我的數學學習歷程記錄。我每週在 YouTube 分享數學影片，也會在這裡發表論文和心得。我相信數學不只是考試工具，而是一種思考方式，一種可以「玩」的語言。</p>
       <p>我想用這些記錄證明：熱愛可以比成績更有說服力。</p>
       <div class="tags">
-        <span class="tag t1">數論</span>
-        <span class="tag t2">組合數學</span>
-        <span class="tag t3">幾何</span>
-        <span class="tag t4">YouTube創作</span>
-        <span class="tag t1">數學競賽</span>
+        <span class="tag t1">數論</span><span class="tag t2">組合數學</span><span class="tag t3">幾何</span><span class="tag t4">YouTube創作</span><span class="tag t1">數學競賽</span>
       </div>
     </div>
   </div>
@@ -272,7 +245,7 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
   </div>
 </div>
 
-<!-- ===== VIDEOS ===== -->
+<!-- VIDEOS -->
 <div class="page" id="page-videos">
   <div class="section">
     <div class="section-header">
@@ -283,39 +256,53 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
   </div>
 </div>
 
-<!-- ===== PAPERS ===== -->
+<!-- PAPERS -->
 <div class="page" id="page-papers">
   <div class="section">
     <div class="section-header">
       <div class="section-title"><div class="title-dot" style="background:var(--v2)"></div>論文 & 研究</div>
     </div>
-    <div class="papers-list" id="all-papers"></div>
-    <div style="margin-top:10px">
-      <button class="add-btn" onclick="openModal('paper')">＋ 新增論文</button>
-    </div>
+    <div class="papers-list" id="all-papers"><div class="empty-state">尚無論文</div></div>
+    <button class="add-btn" onclick="openModal('paper', -1)">＋ 新增論文</button>
   </div>
 </div>
 
-<!-- ===== BLOG ===== -->
+<!-- BLOG -->
 <div class="page" id="page-blog">
   <div class="section">
     <div class="section-header">
       <div class="section-title"><div class="title-dot" style="background:var(--v3)"></div>數學心得</div>
     </div>
-    <div class="posts-list" id="all-posts"></div>
-    <div style="margin-top:10px">
-      <button class="add-btn" onclick="openModal('post')">＋ 新增心得</button>
-    </div>
+    <div class="posts-list" id="all-posts"><div class="empty-state">尚無心得</div></div>
+    <button class="add-btn" onclick="openModal('post', -1)">＋ 新增心得</button>
   </div>
 </div>
 
 <footer>一起玩題目 · 子平 · 2025 – 2030</footer>
 
-<!-- ===== PAPER MODAL ===== -->
+<!-- 登入 Modal -->
+<div class="modal-bg" id="modal-login">
+  <div class="modal">
+    <button class="close-modal" onclick="closeModal('login')">✕</button>
+    <h3>登入</h3>
+    <label>帳號</label>
+    <input type="text" id="admin-user" placeholder="輸入帳號" onkeydown="if(event.key==='Enter')doLogin()">
+    <label>密碼</label>
+    <input type="password" id="admin-pw" placeholder="輸入密碼" onkeydown="if(event.key==='Enter')doLogin()">
+    <div id="login-err" style="color:var(--v2);font-size:12px;margin-top:8px;display:none">帳號或密碼錯誤</div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal('login')">取消</button>
+      <button class="btn-submit" onclick="doLogin()">登入</button>
+    </div>
+  </div>
+</div>
+
+<!-- 論文 Modal -->
 <div class="modal-bg" id="modal-paper">
   <div class="modal">
     <button class="close-modal" onclick="closeModal('paper')">✕</button>
-    <h3>新增論文</h3>
+    <h3 id="paper-modal-title">新增論文</h3>
+    <input type="hidden" id="p-idx">
     <label>標題</label>
     <input type="text" id="p-title" placeholder="論文標題">
     <label>摘要</label>
@@ -326,45 +313,85 @@ footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-si
     <input type="text" id="p-date" placeholder="2025.06">
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeModal('paper')">取消</button>
-      <button class="btn-submit" onclick="addPaper()">發布</button>
+      <button class="btn-submit" onclick="savePaper()">儲存</button>
     </div>
   </div>
 </div>
 
-<!-- ===== POST MODAL ===== -->
+<!-- 心得 Modal -->
 <div class="modal-bg" id="modal-post">
   <div class="modal">
     <button class="close-modal" onclick="closeModal('post')">✕</button>
-    <h3>新增心得</h3>
+    <h3 id="post-modal-title">新增心得</h3>
+    <input type="hidden" id="b-idx">
     <label>標題</label>
     <input type="text" id="b-title" placeholder="心得標題">
-    <label>內容預覽</label>
-    <textarea id="b-content" placeholder="分享你的數學心得..."></textarea>
+    <label>內容</label>
+    <textarea id="b-content" placeholder="分享你的數學心得..." style="min-height:140px"></textarea>
     <label>標籤（用逗號分隔）</label>
     <input type="text" id="b-tags" placeholder="無限,集合論">
     <label>日期</label>
     <input type="text" id="b-date" placeholder="2025.06.01">
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeModal('post')">取消</button>
-      <button class="btn-submit" onclick="addPost()">發布</button>
+      <button class="btn-submit" onclick="savePost()">儲存</button>
     </div>
   </div>
 </div>
 
 <script>
-// ── 資料存放 ──
+// ════════════════════════════════
+// 設定區 — 修改帳號密碼請改這裡
+// ════════════════════════════════
+const ADMIN_USERNAME = 'ziping';
+const ADMIN_PASSWORD = 'ziping2025';
 const CHANNEL_ID = 'UC-XrauaPOiXOt4Brmu2V32w';
 
-let papers = [
-  {title:'費馬最後定理的直觀理解', abstract:'從直觀出發，探索 xⁿ + yⁿ = zⁿ 在 n > 2 時無正整數解的原因，以及這個定理背後的數學之美。', tags:['數論','初探'], date:'2025.01'}
-];
-
-let posts = [
-  {title:'為什麼我覺得無限讓人著迷？', content:'今天上課老師講到極限，突然讓我想到：「無限大」到底是什麼？是一個數字嗎？還是一個概念？我開始想到康托爾的集合論……', tags:['無限','集合論'], date:'2025.01.15'}
-];
-
+// ── 資料（從 localStorage 讀取）──
 const tagColors = ['t1','t2','t3','t4'];
 function tagClass(i){ return tagColors[i % tagColors.length]; }
+
+function loadData(key){ try{ return JSON.parse(localStorage.getItem(key))||[]; }catch(e){ return []; } }
+function saveData(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
+
+let papers = loadData('zp_papers');
+let posts  = loadData('zp_posts');
+
+// ── 後台管理 ──
+let isAdmin = false;
+
+function toggleAdmin(){
+  if(isAdmin){ logoutAdmin(); return; }
+  openModal('login');
+}
+
+function doLogin(){
+  const user = document.getElementById('admin-user').value.trim();
+  const pw   = document.getElementById('admin-pw').value;
+  if(user === ADMIN_USERNAME && pw === ADMIN_PASSWORD){
+    isAdmin = true;
+    document.getElementById('modal-login').classList.remove('open');
+    document.getElementById('admin-user').value = '';
+    document.getElementById('admin-pw').value = '';
+    document.getElementById('login-err').style.display = 'none';
+    document.getElementById('admin-bar').classList.add('show');
+    document.getElementById('admin-toggle').classList.add('on');
+    document.getElementById('admin-toggle').textContent = '登出';
+    document.body.classList.add('admin-mode');
+    renderPapers(); renderPosts();
+  } else {
+    document.getElementById('login-err').style.display = 'block';
+  }
+}
+
+function logoutAdmin(){
+  isAdmin = false;
+  document.getElementById('admin-bar').classList.remove('show');
+  document.getElementById('admin-toggle').classList.remove('on');
+  document.getElementById('admin-toggle').textContent = '登入';
+  document.body.classList.remove('admin-mode');
+  renderPapers(); renderPosts();
+}
 
 // ── 頁面切換 ──
 function show(p){
@@ -388,90 +415,171 @@ function renderPapers(){
           ${paper.tags.map((t,j)=>`<span class="pm-tag ${tagClass(j)}">${t}</span>`).join('')}
           <span class="pm-date">${paper.date}</span>
         </div>
+        <div class="item-actions">
+          <button class="act-btn act-edit" onclick="openModal('paper',${i})">編輯</button>
+          <button class="act-btn act-del" onclick="deletePaper(${i})">刪除</button>
+        </div>
       </div>
     </div>`;
-  const html = papers.map((p,i)=>mk(p,i)).join('');
+  const html = papers.length ? papers.map((p,i)=>mk(p,i)).join('') : '<div class="empty-state">尚無論文</div>';
   const el1 = document.getElementById('all-papers');
   const el2 = document.getElementById('home-papers');
-  if(el1) el1.innerHTML = html || '<div class="empty-state">尚無論文</div>';
-  if(el2) el2.innerHTML = papers.slice(0,2).map((p,i)=>mk(p,i)).join('') || '<div class="empty-state">尚無論文</div>';
-  document.getElementById('stat-papers').textContent = papers.length + '+';
+  if(el1) el1.innerHTML = html;
+  if(el2) el2.innerHTML = papers.length ? papers.slice(0,2).map((p,i)=>mk(p,i)).join('') : '<div class="empty-state">尚無論文</div>';
+  document.getElementById('stat-papers').textContent = papers.length;
 }
 
 // ── 心得渲染 ──
 function renderPosts(){
-  const mk = post => `
+  const mk = (post, i) => `
     <div class="post-card">
       <div class="post-date">${post.date}</div>
       <div class="post-title">${post.title}</div>
       <div class="post-preview">${post.content}</div>
       <div class="post-tags">${post.tags.map((t,j)=>`<span class="pm-tag ${tagClass(j)}">${t}</span>`).join('')}</div>
+      <div class="item-actions">
+        <button class="act-btn act-edit" onclick="openModal('post',${i})">編輯</button>
+        <button class="act-btn act-del" onclick="deletePost(${i})">刪除</button>
+      </div>
     </div>`;
-  const html = posts.map(mk).join('');
+  const html = posts.length ? posts.map((p,i)=>mk(p,i)).join('') : '<div class="empty-state">尚無心得</div>';
   const el = document.getElementById('all-posts');
-  if(el) el.innerHTML = html || '<div class="empty-state">尚無心得</div>';
+  if(el) el.innerHTML = html;
 }
 
 // ── Modal ──
-function openModal(type){ document.getElementById('modal-'+type).classList.add('open'); }
-function closeModal(type){ document.getElementById('modal-'+type).classList.remove('open'); }
+function openModal(type, idx){
+  if(type !== 'login' && !isAdmin) return;
+  if(type === 'paper'){
+    document.getElementById('paper-modal-title').textContent = idx >= 0 ? '編輯論文' : '新增論文';
+    document.getElementById('p-idx').value = idx;
+    if(idx >= 0){
+      const p = papers[idx];
+      document.getElementById('p-title').value = p.title;
+      document.getElementById('p-abstract').value = p.abstract;
+      document.getElementById('p-tags').value = p.tags.join(',');
+      document.getElementById('p-date').value = p.date;
+    } else {
+      document.getElementById('p-title').value='';
+      document.getElementById('p-abstract').value='';
+      document.getElementById('p-tags').value='';
+      document.getElementById('p-date').value='';
+    }
+  }
+  if(type === 'post'){
+    document.getElementById('post-modal-title').textContent = idx >= 0 ? '編輯心得' : '新增心得';
+    document.getElementById('b-idx').value = idx;
+    if(idx >= 0){
+      const p = posts[idx];
+      document.getElementById('b-title').value = p.title;
+      document.getElementById('b-content').value = p.content;
+      document.getElementById('b-tags').value = p.tags.join(',');
+      document.getElementById('b-date').value = p.date;
+    } else {
+      document.getElementById('b-title').value='';
+      document.getElementById('b-content').value='';
+      document.getElementById('b-tags').value='';
+      document.getElementById('b-date').value='';
+    }
+  }
+  document.getElementById('modal-'+type).classList.add('open');
+}
 
-function addPaper(){
-  const title = document.getElementById('p-title').value.trim();
+function closeModal(type){
+  document.getElementById('modal-'+type).classList.remove('open');
+  if(type==='login') document.getElementById('login-err').style.display='none';
+}
+
+function savePaper(){
+  const title    = document.getElementById('p-title').value.trim();
   const abstract = document.getElementById('p-abstract').value.trim();
-  const tags = document.getElementById('p-tags').value.split(',').map(t=>t.trim()).filter(Boolean);
-  const date = document.getElementById('p-date').value.trim();
+  const tags     = document.getElementById('p-tags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  const date     = document.getElementById('p-date').value.trim();
+  const idx      = parseInt(document.getElementById('p-idx').value);
   if(!title) return alert('請填寫標題');
-  papers.unshift({title, abstract, tags, date});
+  if(idx >= 0){ papers[idx] = {title,abstract,tags,date}; }
+  else { papers.unshift({title,abstract,tags,date}); }
+  saveData('zp_papers', papers);
   closeModal('paper');
-  document.getElementById('p-title').value='';
-  document.getElementById('p-abstract').value='';
-  document.getElementById('p-tags').value='';
-  document.getElementById('p-date').value='';
   renderPapers();
 }
 
-function addPost(){
-  const title = document.getElementById('b-title').value.trim();
+function deletePaper(i){
+  if(!confirm('確定刪除這篇論文？')) return;
+  papers.splice(i,1);
+  saveData('zp_papers', papers);
+  renderPapers();
+}
+
+function savePost(){
+  const title   = document.getElementById('b-title').value.trim();
   const content = document.getElementById('b-content').value.trim();
-  const tags = document.getElementById('b-tags').value.split(',').map(t=>t.trim()).filter(Boolean);
-  const date = document.getElementById('b-date').value.trim();
+  const tags    = document.getElementById('b-tags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  const date    = document.getElementById('b-date').value.trim();
+  const idx     = parseInt(document.getElementById('b-idx').value);
   if(!title) return alert('請填寫標題');
-  posts.unshift({title, content, tags, date});
+  if(idx >= 0){ posts[idx] = {title,content,tags,date}; }
+  else { posts.unshift({title,content,tags,date}); }
+  saveData('zp_posts', posts);
   closeModal('post');
-  document.getElementById('b-title').value='';
-  document.getElementById('b-content').value='';
-  document.getElementById('b-tags').value='';
-  document.getElementById('b-date').value='';
+  renderPosts();
+}
+
+function deletePost(i){
+  if(!confirm('確定刪除這篇心得？')) return;
+  posts.splice(i,1);
+  saveData('zp_posts', posts);
   renderPosts();
 }
 
 // ── YouTube 影片 ──
+function mkVideoCard(id, title, thumb, date){
+  return `<a class="video-card" href="https://www.youtube.com/watch?v=${id}" target="_blank">
+    <div class="video-thumb"><img src="${thumb}" alt="${title}" onerror="this.src='https://i.ytimg.com/vi/${id}/hqdefault.jpg'"></div>
+    <div class="video-info"><div class="video-title">${title}</div><div class="video-date">${date}</div></div>
+  </a>`;
+}
+
+function renderVideos(items){
+  if(!items||!items.length){ fallback(); return; }
+  document.getElementById('stat-videos').textContent = items.length+'+';
+  const cards = items.map(v=>mkVideoCard(v.id,v.title,v.thumb,v.date));
+  document.getElementById('home-videos').innerHTML = cards.slice(0,3).join('');
+  document.getElementById('all-videos').innerHTML = cards.join('');
+}
+
 async function loadVideos(){
+  const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
   try{
-    const rss = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rss)}`);
+    const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=50`);
     const data = await res.json();
-    if(data.items && data.items.length){
-      document.getElementById('stat-videos').textContent = data.items.length + '+';
-      const mk = v => `
-        <a class="video-card" href="${v.link}" target="_blank">
-          <div class="video-thumb">
-            <img src="${v.thumbnail}" alt="${v.title}" onerror="this.parentNode.innerHTML='<div class=play-btn><svg viewBox=0 0 24 24><polygon points=5,3 19,12 5,21 fill=white/></svg></div>'">
-          </div>
-          <div class="video-info">
-            <div class="video-title">${v.title}</div>
-            <div class="video-date">${v.pubDate ? v.pubDate.slice(0,10) : ''}</div>
-          </div>
-        </a>`;
-      document.getElementById('home-videos').innerHTML = data.items.slice(0,3).map(mk).join('');
-      document.getElementById('all-videos').innerHTML = data.items.map(mk).join('');
-    } else { fallback(); }
-  } catch(e){ fallback(); }
+    if(data.status==='ok'&&data.items&&data.items.length){
+      const items = data.items.map(v=>({
+        id: (v.link||'').split('v=')[1]||(v.guid||'').split('v=')[1]||'',
+        title: v.title, thumb: v.thumbnail||`https://i.ytimg.com/vi/${(v.link||'').split('v=')[1]}/mqdefault.jpg`,
+        date: v.pubDate?v.pubDate.slice(0,10):''
+      }));
+      renderVideos(items); return;
+    }
+  }catch(e){}
+  try{
+    const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(rssUrl)}`);
+    const text = await res.text();
+    const xml = new DOMParser().parseFromString(text,'text/xml');
+    const entries = Array.from(xml.querySelectorAll('entry'));
+    if(entries.length){
+      const items = entries.map(e=>{
+        const id = e.querySelector('videoId')?.textContent||e.querySelector('id')?.textContent?.split(':').pop()||'';
+        return {id, title:e.querySelector('title')?.textContent||'', thumb:`https://i.ytimg.com/vi/${id}/mqdefault.jpg`, date:e.querySelector('published')?.textContent?.slice(0,10)||''};
+      });
+      renderVideos(items); return;
+    }
+  }catch(e){}
+  fallback();
 }
 
 function fallback(){
-  const msg = '<div class="empty-state">無法載入影片，請檢查網路連線</div>';
+  const msg = `<div class="empty-state">影片暫時無法載入，請直接前往 <a href="https://www.youtube.com/@子平講數學" target="_blank" style="color:var(--v1)">YouTube 頻道</a> 觀看</div>`;
   document.getElementById('home-videos').innerHTML = msg;
   document.getElementById('all-videos').innerHTML = msg;
 }
